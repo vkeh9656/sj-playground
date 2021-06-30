@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체로 소수 출력</title>
+</head>
+<body>
+    <script>
+        
+        var numbers= {};
+        numbers.all = [];
+        numbers.prime = [];
+
+        numbers.isPrime = function(number) {
+            for (var i = 2; i<number; i++) {
+                
+
+                if(number%i ==0){
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        numbers.addAllNumber = function(maxNum){
+            for ( var i =2; i<maxNum ; i++){
+                this.all.push(i);
+            }
+        };
+
+        numbers.getPrime = function() {
+            for (var i=2; i < this.all.length; i++) {
+                var n = this.all[i];
+                if(this.isPrime(n)) {
+                    this.prime.push(n);
+                }
+            }
+        };
+
+        numbers.getAllPrime = function() {
+            var ret = "";
+            ret += "<h2>전체 소수의 갯수:"+ this.prime.length+"</h2>\n";
+            for( var i = 0; i<this.prime.length; i++) {
+                ret += (i+1)+"번째 소수 "+ this.prime[i]+ "<br>"
+            }
+            return ret;
+        };
+
+        numbers.addAllNumber(100);
+        numbers.getPrime();
+        document.write(numbers.getAllPrime());
+
+    </script>
+</body>
+</html>

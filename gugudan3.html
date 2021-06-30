@@ -14,15 +14,15 @@
     <script>
         function display() {
             var strN = document.getElementById("num").value;
-            var n = Number(strN);
+        var n = Number(strN);
 
-            if( n < 2 || n > 9){
-                console.log("2이상 9이하의 숫자를 입력해주세요.")
-            } else { 
-                for ( var i = 1; i < 10 ;i++) {
-                    console.log(n, ' * ', i, ' = ', n * i);
-                }
+        if( n < 2 || n > 9){
+            console.log("2이상 9이하의 숫자를 입력해주세요.")
+        } else { 
+            for ( var i = 1; i < 10 ;i++) {
+                console.log(n, ' * ', i, ' = ', n * i);
             }
+        }
         }
 
         
